@@ -1,9 +1,11 @@
 import image from "../assets/capa-dark.jpg";
 import { useEffect, useState } from "react";
+import api_key from "./api";
+
 export default function Cardd() {
   const [result, setResult] = useState();
   const [banner, setBanner] = useState(image);
-  const api = `http://www.omdbapi.com/?s=movie&page=1&apikey=${process.env.REACT_APP_API_KEY}`;
+  const api = `https://www.omdbapi.com/?s=movie&page=1&apikey=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
     const fetchData = async () => {
