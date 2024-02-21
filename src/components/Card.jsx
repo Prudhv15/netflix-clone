@@ -1,11 +1,9 @@
-import { Card } from "@material-tailwind/react";
 import image from "../assets/capa-dark.jpg";
-import Header from "./Header";
 import { useEffect, useState } from "react";
 export default function Cardd() {
   const [result, setResult] = useState();
   const [banner, setBanner] = useState(image);
-  const api = "http://www.omdbapi.com/?s=movie&page=1&apikey=7b189f01";
+  const api = `http://www.omdbapi.com/?s=movie&page=1&apikey=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,10 +29,9 @@ export default function Cardd() {
 
   function setImage(id) {
     console.log(id);
-    // Assuming you have a 'result' array, find the movie by ID
+
     const selectedMovie = result.find((movie) => movie.imdbID === id);
 
-    // Update the banner based on the selected movie's poster
     setBanner(selectedMovie ? selectedMovie.Poster : "");
   }
 
