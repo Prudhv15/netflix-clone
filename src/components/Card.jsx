@@ -1,6 +1,5 @@
 import image from "../assets/capa-dark.jpg";
 import { useEffect, useState } from "react";
-import api_key from "./api";
 
 export default function Cardd() {
   const [result, setResult] = useState();
